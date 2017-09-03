@@ -1,3 +1,12 @@
 # WARNING! IT WILL REMOVE ALL DATA FROM DEVICE /dev/sdb
 # This script is useful when you try to install windows operating system in new clean dedicated server.
-wget -qO- https://github.com/mdrakib/win-boot/releases/download/v1.0/win-boot.img.tar.gz | tar -xzO | dd of=/dev/sdb bs=64K
+# Assuming that the dedicated server has two hdd, we are making 2nd hdd as bootable, then you can boot from 2nd hdd and install OS to 1st hdd
+wget -qO- https://github.com/mdrakib/win-boot/releases/download/v1.0/win-boot.img.tar.gz | tar -xzO | dd of=/dev/sdb bs=1M
+
+# Copy your iso content to /dev/sdb1
+# ==========================================
+# mkdir boot && mount /dev/sdb1 boot
+# mkdir dvd && mount -o loop win.iso dvd
+# cp -r dvd/* boot/
+# ==========================================
+# All done, now you can boot from 2nd hdd
