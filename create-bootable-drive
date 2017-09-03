@@ -1,3 +1,3 @@
 # WARNING! IT WILL REMOVE ALL DATA FROM DEVICE /dev/sdb
 # This script is useful when you try to install windows operating system in new clean dedicated server.
-wget -O - https://github.com/mdrakib/win-boot/releases/download/v1.0/win-boot.img.tar.gz | tar -xzO | dd of=/dev/sdb bs=64K status=progress
+wget -qO- https://github.com/mdrakib/win-boot/releases/download/v1.0/win-boot.img.tar.gz | tar -xzO | dd of=/dev/sdb bs=64K
